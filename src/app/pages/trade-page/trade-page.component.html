@@ -1,0 +1,207 @@
+    <section id="p_cryptocurrency" class="atf-section-padding">
+    <div class="container">
+      <div class="container" style="background-color: #ffffff;">
+        <div class="row" style="margin-top: 40px;">
+      <div class="atf-stock-market-price">
+        <div class="atf-market-rate">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-12">
+              <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                <div class="atf-cryp-main-wrapper">
+                  <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> BNB Balance</h6>
+                  <div class="atf-cryp-amount">{{ bnb_balance }}</div>
+                  <div class="atf-cryp-current-info range-down">
+                    <span class="atf-cryp-rate"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                <div class="atf-cryp-main-wrapper">
+                  <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> GOATx Balance</h6>
+                  <div class="atf-cryp-amount">{{ goatx_balance }}</div>
+                  <div class="atf-cryp-current-info range-down">
+                    <span class="atf-cryp-rate"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                <div class="atf-cryp-main-wrapper">
+                  <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> BUSD Balance</h6>
+                  <div class="atf-cryp-amount">{{ busd_balance }}</div>
+                  <div class="atf-cryp-current-info range-up">
+                    <span class="atf-cryp-rate"></span>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12">
+              <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                <div class="atf-cryp-main-wrapper">
+                  <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> Account</h6>
+                  <div class="atf-cryp-amount">{{ MyAccountDisplay }}</div>
+                  <div class="atf-cryp-current-info range-up">
+                    <span class="atf-cryp-rate"></span>
+                  </div>
+                </div>
+              </div>
+            </div>                     
+          </div>
+        </div> 
+      </div>
+      </div>
+      </div>
+  <!-- CONTACT SECTION START-->
+  <section id="contact" class="atf-contact-area atf-section-padding" style="padding-top: 30px; background-color: #ffffff;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="atf-section-title text-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+            <h2>Trade Tokens in an Instant</h2>
+          </div>
+        </div><!--- END COL -->
+      </div><!--- END ROW -->
+      
+      <div class="row">
+        <div class="col-xl-8 col-lg-8 offset-lg-2">
+          <div class="address_area">
+            <div class="row contact-information">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="contact-details wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0"> 
+                  <i title="The source token is the token you are sending for the swap" class="fa fa-home">1</i>
+                  <p>Select source token</p>
+                </div>
+              </div>
+              
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="contact-details wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                  <i class="fa fa-phone">2</i>
+                  <p>Select destination token</p>
+                </div>
+              </div>
+              
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="contact-details wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                  <i class="fa fa-envelope">3</i>
+                  <p>Select amount to trade</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Contact End-->
+          <form id="contact-form" class="form atf-contact-form"  action="assets/php/mail.php" method="POST">
+            <div class="atf-main-contact">
+              <div class="row">
+                <div class="col-md-6">
+                  Send Token
+                  <div class="form-group">
+                    <select class="form-control" id="tokenFrom" name="tokenFrom" type="text" (click)="getToTokenList(); getSendingTokenBalance(); getPairContract(); checkSendingTokenApproved()" [(ngModel)]="tokenFrom" required="required">
+                        <option value="X">Select Token to Send</option>
+                      <option *ngFor="let m of tokenList2" value="{{ m.symbol }}">{{ m.symbol }} - {{ m.name }}</option>                                                                               
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  Receive Token
+                  <div class="form-group">
+                    <select id="name" class="form-control" id="tokenTo" name="tokenTo" type="text" (click)="getReceivingTokenBalance(); getPairContract(); checkReceivingTokenApproved()" [(ngModel)]="tokenTo" required="required">
+                        <option value="X">Select Token to Receive</option>                        
+                        <option *ngFor="let m of tokenToList.to" value="{{ m.symbol }}">{{ m.symbol }} - {{ m.name }}</option>                              
+                    </select><br>
+                    <span style="color:red">{{ errorMessage }}</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+Amount to Send &nbsp; &nbsp; <a (click)="sendMax()">(MAX)</a><br>
+<span *ngIf="tokenFrom!='X'">Balance ({{ tokenFrom }}): {{ balanceFrom }}</span>
+                  </div>
+                  <div class="col-md-6">
+<span *ngIf="tokenTo!='X'">Amount of {{ tokenTo }} you will Receive</span><br>                  
+<span *ngIf="tokenTo!='X'">Balance ({{ tokenTo }}): {{ balanceTo }}<br></span>
+<span *ngIf="tokenTo!='X'&&tokenFrom!='X'&&tokenTo!=tokenFrom">
+Est Exchange Rate:
+&nbsp; &nbsp; {{ rate }} {{ tokenTo }}/{{ tokenFrom }}</span>
+</div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" [ngStyle]="fromStyle" class="form-control"  id="sellAmount" name="sellAmount" [(ngModel)]="sellAmount" (keyup)="onKeyUpEvent($event, 'SEND', sellAmount)" placeholder="0.00" required="required">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">                    
+                      <input type="text" [ngStyle]="toStyle" id="buyAmount" (keyup)="onKeyUpEvent($event, 'RECEIVE', buyAmount)" name="buyAmount" [(ngModel)]="buyAmount"  type="text" placeholder="0.00" required="required">
+                        <span *ngIf="sellAmount!=0&&tokenReceive.newRate!='0'"><br>Price after Trade: {{ tokenReceive.newRate }} </span>                
+                        <span *ngIf="sellAmount!=0&&tokenSend.pctAffect!='0'"><br>Price Affect: {{ tokenSend.pctAffect }}% </span>                            
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p>The exchange of tokens is never exact based on market fluctuations.  Choose whether you want the sending or 
+                        receiving amount to be exact.
+                      </p>
+                      </div> 
+                  </div>
+                  <div class="row justify-content-center" style="margin-top: 20px;">
+                      <div class="col-md-12 justify-content-center">
+                        <div class="form-group">
+                        <div class="col-sm-6 col-md-6 justify-content-center offset-lg-3">
+                          <div class="input-group">
+                            <div id="radioBtn" class="btn-group">
+                              <a class="btn btn-sm active" [ngClass]="sendExact=='Y' ? 'btn-primary active' : 'btn notActive'" (click)="setSendExact()" data-toggle="fun" data-title="Y">Send Exact Number</a>  
+                              <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" (click)="setReceiveExact()" data-toggle="fun" data-title="N">Receive Exact Number</a>
+                            </div>
+                            <input type="hidden" name="fun" id="fun" value="Y">
+                          </div>
+                        </div>
+                      </div>
+                        </div>                           
+                  </div>
+                <div *ngIf="isFromTokenApproved!='Y'&&tokenFrom!='X'" class="row">              
+                    <div class="col-md-12">
+                      <div class="atf-contact-btn atf-download-btn text-center" >
+                        <button type="submit" (click)="approveFromToken()" class="btn purple atf-themes-btn"><span>Approve {{ tokenFrom }}</span></button>
+                      </div>
+                    </div>     
+                  </div>   
+                  <!-- <div *ngIf="isToTokenApproved!='Y'&&tokenTo!='X'"  class="row">              
+                    <div class="col-md-12">
+                      <div class="atf-contact-btn atf-download-btn text-center" >
+                        <button type="submit" (click)="approveToToken()" class="btn purple atf-themes-btn"><span>Approve {{ tokenTo }}</span></button>
+                      </div>
+                    </div>     
+                  </div>                                  -->
+                <div  *ngIf="isFromTokenApproved=='Y'&&isToTokenApproved=='Y'" class="row">                          
+                <div class="col-md-12">
+                  <div class="atf-contact-btn atf-download-btn text-center" >
+                    <button type="submit" (click)="openTradeConfirmation(tradeconfirmation)" class="btn purple atf-themes-btn"><span>{{ buttonTitle }}</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form><br/>
+          <p class="form-message"></p>
+        </div><!--- END COL -->
+      </div><!--- END ROW -->
+    </div><!--- END CONTAINER -->
+  </section> 
+    </div>
+  </section>
+  <ng-template #tradeconfirmation let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="tradeconfirmation">Swap Tokens</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Are you sure you want to swap these tokens?
+      {{ tokenFrom }} - {{ tokenTo }}
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Swap')">Swap Now</button>
+    </div>
+  </ng-template>

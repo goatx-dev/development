@@ -1,0 +1,25 @@
+<header>
+    <nav class="navbar navbar-navs navbar-expend navbar-expand-md fixed-top" id="menu-top" style="background-color: #000040;">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">GOATx</a>
+        <button [ngClass]="{'collapsed': isOpen !== 'Y'}" class="navbar-toggler" (click)="showMenu()" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div [ngClass]="{'show': isOpen === 'Y'}" class="collapse navbar-collapse justify-content-end" id="navbarDefault">
+          <ul class="navbar-nav">
+            <li class="menu-nav"><a (click)="showMenu()" class="nav-link page-scroll active" href="index.html">Home</a></li>                        
+            <li class="menu-nav"><a (click)="showMenu()" class="nav-link page-scroll" [routerLink]="['/trade']">Trade</a></li>       
+            <li class="menu-nav"><a (click)="showMenu()" class="nav-link page-scroll" [routerLink]="['/liquidity']">GOATx Staking</a></li>             
+            <li class="menu-nav"><a (click)="showMenu()" class="nav-link page-scroll" [routerLink]="['/assets']">Track Assets</a></li>
+            <li class="menu-nav"><a (click)="showMenu()" class="nav-link page-scroll" [routerLink]="['/info']">Info</a></li>
+            <li class="menu-nav"><a (click)="showMenu()" class="nav-link page-scroll" [routerLink]="['/docs']">Getting Started</a></li>                           
+            <li *ngIf="mmask=='0'" class="menu-nav"><a class="nav-link page-scroll btn atf-themes-btn ml-4 atf-quote purple" [routerLink]="['/wallet']"><span>Install Wallet</span></a></li>
+            <li *ngIf="mmask=='2'" class="menu-nav"><a class="nav-link page-scroll btn atf-themes-btn ml-4 atf-quote purple" (click)="getAccount()"><span>Connect Wallet</span></a></li>
+            <li *ngIf="mmask=='1'" class="menu-nav"><a class="nav-link page-scroll btn atf-themes-btn ml-4 atf-quote purple" [routerLink]="['/settings']"><span>Settings</span></a></li>
+          </ul>
+        </div>
+      </div> <!--- END CONTAINER -->
+    </nav>
+  </header>

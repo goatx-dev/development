@@ -1,0 +1,49 @@
+<section id="p_cryptocurrency" class="atf-section-padding" style="height:900px;">
+  <div class="container"  style="height:900px;">
+<section id="contact" class="atf-contact-area atf-section-padding" style="background-color: #ffffff; padding-top:40px;">
+  <div class="container"  style="height:900px;">
+      <app-broker-client></app-broker-client>  
+      <div class="row" style="margin-top:30px;">
+        <div class="col-lg-4"><h3>GOATx Price: $5.46</h3></div>
+        <div class="col-lg-4"><h3>Bitcoin Price: $38,774.50</h3></div>          
+        <div class="col-lg-4"><h3>BNB Price: $359.58</h3></div>              
+      </div>
+      <div class="row" style="margin-top:30px;">
+        <div class="col-lg-12"><h3>Customer List 
+        <button style="margin-left:50px;" class="btn btn-primary" [routerLink]="['/customer-list']">Add Customer</button>        
+      </h3>        
+          <table class="table table-striped table-condensed" style="margin-top:40px;">
+            <thead>
+              <tr>
+              <th>Account ID</th>
+              <th>Customer Name</th>
+              <th>State</th>
+              <th>Country</th>
+              <th># Orders</th>
+              <th>Active Orders</th>              
+              <th>Goatx Token</th>
+              <th>Total Purchased<th>
+              </tr>
+            </thead>
+                    <tbody>
+                    <tr *ngFor="let m of data | filter: term | paginate: { currentPage: p , itemsPerPage: 25}">
+                    <td>{{ m.ID }}</td>
+                    <td>{{ m.OWNER_NAME }}</td> 
+                    <td>{{ m.STATE}}</td>
+                    <td>{{ m.COUNTRY }}</td>       
+                    <td>{{ m.ORDER_COUNT }}</td>
+                    <td>{{ m.ACTIVE_ORDERS }}</td>                     
+                    <td>{{ m.TOKEN_COUNT }}</td>                                             
+                    <td>${{ m.ORDER_TOTAL }}</td> 
+
+                  </tr>
+                </tbody>      
+                  </table>
+        </div>            
+      </div>        
+  </div>
+</section> 
+</div>
+</section>
+ 
+

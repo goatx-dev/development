@@ -1,0 +1,155 @@
+<section id="p_cryptocurrency" class="atf-section-padding">
+    <div class="container">
+  <!-- CONTACT SECTION START-->
+  <section id="contact" class="atf-contact-area atf-section-padding" style="padding-top: 30px; background-color: #ffffff;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="atf-section-title text-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+            <h2>Settings <span *ngIf="MyAccountDisplay!=''">({{ MyAccountDisplay }})</span></h2>
+          </div>
+        </div><!--- END COL -->
+      </div><!--- END ROW -->
+      
+      <div class="row">
+        <div class="col-xl-8 col-lg-8 offset-lg-2">
+          <!--Contact End-->
+          <form id="contact-form" class="form atf-contact-form"  action="assets/php/mail.php" method="POST">
+            <div class="atf-main-contact">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p>This screen allows you to adjust the site settings for your account and wallets.
+                      </p>
+                      </div> 
+                  </div>
+                  <div class="row justify-content-center" style="margin-top: 20px;">
+                    <div class="col-md-12 justify-content-center">
+                      <div class="form-group"  style="margin-bottom:10px">
+                      <div class="col-sm-7 col-md-7 offset-lg-3">
+                          <div class="row">
+                              <div class="col-sm-4 col-md-4 col-lg-4">Maintain Token List</div>
+                              <div class="col-sm-8 col-md-8 col-lg-8">
+                                  <div class="input-group">                  
+                                      <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-sm active" [ngClass]="sendExact=='Y' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="Y">Yes</a>  
+                                        <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="N">No</a>
+                                      </div>
+                                      <input type="hidden" name="fun" id="fun" value="Y">
+                                    </div>                                    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                      </div>                           
+                </div>    
+                <div class="row justify-content-center">
+                    <div class="col-md-12 justify-content-center">
+                      <div class="form-group" style="margin-bottom:10px">
+                      <div class="col-sm-7 col-md-7 offset-lg-3">
+                          <div class="row">
+                              <div class="col-sm-4 col-md-4 col-lg-4">Save Transactions</div>
+                              <div class="col-sm-8 col-md-8 col-lg-8">
+                                  <div class="input-group">                  
+                                      <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-sm active" [ngClass]="sendExact=='Y' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="Y">Yes</a>  
+                                        <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="N">No</a>
+                                      </div>
+                                      <input type="hidden" name="fun" id="fun" value="Y">
+                                    </div>                                    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                      </div>                           
+                </div> 
+                <div class="row justify-content-center">
+                    <div class="col-md-12 justify-content-center">
+                      <div class="form-group" style="margin-bottom:10px">
+                      <div class="col-sm-7 col-md-7 offset-lg-3">
+                          <div class="row">
+                              <div class="col-sm-4 col-md-4 col-lg-4">Value Transactions In</div>
+                              <div class="col-sm-8 col-md-8 col-lg-8">
+                                  <div class="input-group">                  
+                                      <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-sm active" [ngClass]="sendExact=='Y' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="Y">BUSD ($$)</a>  
+                                        <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="N">BNB</a>
+                                        <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="N">None</a>
+                                    </div>
+                                      <input type="hidden" name="fun" id="fun" value="Y">
+                                    </div>                                    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                      </div>                           
+                </div>                    
+                <div class="row justify-content-center">
+                    <div class="col-md-12 justify-content-center">
+                      <div class="form-group"  style="margin-bottom:10px">
+                      <div class="col-sm-7 col-md-7 offset-lg-3">
+                          <div class="row">
+                              <div class="col-sm-4 col-md-4 col-lg-4">Track Portfolio Value</div>
+                              <div class="col-sm-8 col-md-8 col-lg-8">
+                                  <div class="input-group">                  
+                                      <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-sm active" [ngClass]="sendExact=='Y' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="Y">Yes</a>  
+                                        <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="N">No</a>
+                                      </div>
+                                    </div>                                    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                      </div>                           
+                </div>                                             
+                <div class="row justify-content-center">
+                    <div class="col-md-12 justify-content-center">
+                      <div class="form-group" style="margin-bottom:10px">
+                      <div class="col-sm-7 col-md-7 offset-lg-3">
+                          <div class="row">
+                              <div class="col-sm-4 col-md-4 col-lg-4">Maintain Balances In</div>
+                              <div class="col-sm-8 col-md-8 col-lg-8">
+                                  <div class="input-group">                  
+                                      <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-sm active" [ngClass]="sendExact=='Y' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="Y">BUSD ($$)</a>  
+                                        <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="N">BNB</a>
+                                        <a class="btn btn-sm notActive" [ngClass]="sendExact=='N' ? 'btn-primary active' : 'btn notActive'" data-toggle="fun" data-title="N">None</a>
+                                    </div>
+                                      <input type="hidden" name="fun" id="fun" value="Y">
+                                    </div>                                    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                      </div>                           
+                </div>                  
+                <div class="row justify-content-center">
+                    <div class="col-md-12 justify-content-center">
+                      <div class="form-group" style="margin-bottom:10px">
+                      <div class="col-sm-7 col-md-7 offset-lg-3">
+                          <div class="row">
+                              <div class="col-sm-4 col-md-4 col-lg-4">Wallet Nickname</div>
+                              <div class="col-sm-8 col-md-8 col-lg-8">
+                                  <div class="input-group">       
+                                      <input type="text" class="form-control" style="padding-top:5px; padding-bottom:5px">           
+                                    </div>                                    
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                      </div>                           
+                </div>   
+                <div class="col-md-12" style="margin-top:20px;">
+                    <div class="atf-contact-btn atf-download-btn text-center" >
+                      <button type="submit"  class="btn purple atf-themes-btn"><span>Save Changes</span></button>
+                    </div>
+                  </div>                 
+            </div>
+          </form><br/>
+          <p class="form-message"></p>
+        </div><!--- END COL -->
+      </div><!--- END ROW -->
+    </div><!--- END CONTAINER -->
+  </section> 
+    </div>
+  </section>

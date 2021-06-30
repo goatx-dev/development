@@ -1,0 +1,132 @@
+<section id="p_cryptocurrency" class="atf-section-padding" style="min-height:900px;">
+    <div class="container"  style="min-height:900px;">
+  <section id="contact" class="atf-contact-area atf-section-padding" style="background-color: #ffffff; padding-top:40px;">
+    <div class="container"  style="min-height:900px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">          
+              <nav class="navbar navbar-navs navbar-expend navbar-expand-md" id="m-top" style="background-color: #000040; padding-top:0px; padding-bottom:0px;">
+                <div class="container">
+                  <a class="navbar-brand" href="index.html">ASSETS</a>
+                  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarDefault">
+                    <ul class="navbar-nav">     
+                      <li class="menu-nav"><a class="nav-link page-scroll active" [routerLink]="['/assets']">Complete View</a></li>
+                      <li class="menu-nav"><a class="nav-link page-scroll" [routerLink]="['/portfolio']">Portfolio</a></li>
+                      <li class="menu-nav"><a class="nav-link page-scroll" [routerLink]="['/watchlist']">Watch List</a></li>     
+                      <li class="menu-nav"><a class="nav-link page-scroll" [routerLink]="['/staking']">Staking</a></li>
+                      <li class="menu-nav"><a class="nav-link page-scroll" [routerLink]="['/orders']">Orders</a></li>
+                      <li class="menu-nav"><a class="nav-link page-scroll" [routerLink]="['/transactions']">Transactions</a></li>       
+                      <li class="menu-nav"><a class="nav-link page-scroll" [routerLink]="['/research']">Research Tokens</a></li>                                                                                            
+                    </ul>
+                  </div>
+                </div> 
+              </nav>            
+            </div>
+          </div>   
+        <div class="container" style="background-color: #ffffff;">
+            <div class="row" style="margin-top: 40px;">
+          <div class="atf-stock-market-price">
+            <div class="atf-market-rate">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="atf-cryp-main-wrapper">
+                      <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> BNB Balance</h6>
+                      <div class="atf-cryp-amount"></div>
+                      <div class="atf-cryp-current-info range-down">
+                        <span class="atf-cryp-rate"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                    <div class="atf-cryp-main-wrapper">
+                      <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> GOATx Balance</h6>
+                      <div class="atf-cryp-amount">{{ goatx_balance }}</div>
+                      <div class="atf-cryp-current-info range-down">
+                        <span class="atf-cryp-rate"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                    <div class="atf-cryp-main-wrapper">
+                      <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> BUSD Balance</h6>
+                      <div class="atf-cryp-amount">{{ busd_balance }}</div>
+                      <div class="atf-cryp-current-info range-up">
+                        <span class="atf-cryp-rate"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="atf-cryp-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                    <div class="atf-cryp-main-wrapper">
+                      <h6 class="atf-cryp-title"><i class="icon fas fa-sort-up mr-1"></i> Account</h6>
+                      <div class="atf-cryp-amount">{{ MyAccountDisplay }}</div>
+                      <div class="atf-cryp-current-info range-up">
+                        <span class="atf-cryp-rate"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>                     
+              </div>
+            </div> 
+          </div>
+          </div>
+          </div>
+        <div class="row" style="margin-top:30px;">
+          <div style="margin-left: 20px;" class="col-lg-5"><h3>Token Balances</h3>
+            <table class="table table-striped table-condensed" style="margin-top:40px;">
+              <thead>
+                <tr>
+                <th>Symbol</th>                  
+                <th>Name</th>
+                <th>Balance</th>
+                </tr>
+              </thead>
+                      <tbody>
+                      <tr  *ngFor="let m of data | filter: term | paginate: { currentPage: p , itemsPerPage: 25}">
+                        <td (click)="doAirdrop(m.WALLET_ADDRESS,m.AIRDROP_AMOUNT)">{{ m.ID }}</td>
+                        <td (click)="doAirdrop(m.WALLET_ADDRESS,m.AIRDROP_AMOUNT)">{{ m.WALLET_ADDRESS }}</td>
+                        <td (click)="postComplete(m.WALLET_ADDRESS)"> {{ m.AIRDROP_AMOUNT }}</td>          
+                      </tr>
+                  </tbody>      
+                    </table>
+                    <paging-controls (pageChange)="p = $event" [isItemsPerPage]="false"  
+                    class="my-pagination"></paging-controls>
+          </div>  
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5"><h3>Latest Transactions</h3>
+            <table class="table table-striped table-condensed" style="margin-top:40px;">
+              <thead>
+                <tr>
+                <th>Date/Time</th>                  
+                <th>Symbol</th>
+                <th>Description</th>
+                <th>Amount</th>
+                </tr>
+              </thead>
+                      <tbody>
+                      <tr  *ngFor="let m of data | filter: term | paginate: { currentPage: p , itemsPerPage: 25}">
+                        <td (click)="doAirdrop(m.WALLET_ADDRESS,m.AIRDROP_AMOUNT)">{{ m.ID }}</td>
+                        <td (click)="doAirdrop(m.WALLET_ADDRESS,m.AIRDROP_AMOUNT)">{{ m.WALLET_ADDRESS }}</td>
+                        <td (click)="postComplete(m.WALLET_ADDRESS)"> {{ m.AIRDROP_AMOUNT }}</td>          
+                      </tr>
+                  </tbody>      
+                    </table>
+                    <paging-controls (pageChange)="p = $event" [isItemsPerPage]="false"  
+                    class="my-pagination"></paging-controls>
+          </div>                      
+        </div>        
+    </div>
+  </section> 
+  </div>
+  </section>
+
