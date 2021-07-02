@@ -1652,7 +1652,7 @@ button, input, textarea:focus {
 .service-wrapper p{margin-bottom: 10px;}
 .service-wrapper h2{line-height: 20px;}
 .service-wrapper h2 button {font-size: 16px;}
-.service-wrapper ul{margin-left: 20px;margin-bottom: 10px;list-style-type: disc;}
+.service-wrapper ul{margin-left: 16px;margin-bottom: 10px;list-style-type: disc;}
 .service-wrapper ul ul{list-style-type: circle;}
 .service-wrapper .accordion-button:not(.collapsed), .service-wrapper .accordion-button:not(.collapsed):hover{
     background-color: var(--thm-black);color: #0d6efd;
@@ -1661,5 +1661,17 @@ button, input, textarea:focus {
 
 
 .policy-title{padding-top: 110px;margin-top: -80px;margin-bottom: 10px;}
-.policy-wrapper ul{list-style-type: disc;padding-left: 20px;}
+.policy-wrapper ul{list-style-type: disc;padding-left: 16px;}
 .policy-wrapper p{margin-bottom: 10px;}
+.alert.alert-box{padding: 15px 0;border-radius: 0;border-left: 2px solid;}
+.alert.alert-box span{padding: 0rem .9rem;}
+ul.list-styled{list-style-type: disc;padding-left: 16px;}
+.get_start img{max-width: 600px;}
+.get_start img.mx-300{max-width: 300px;}
+ul.list-number{list-style-type: auto;padding-left: 16px;}
+
+@media only screen and (max-width: 767px) {
+	.get_start img{max-width: 320px;}
+	.get_start img.mx-300{max-width: 200px;}
+	.policy-title{padding-top: 90px;}
+}
