@@ -22,6 +22,7 @@ Version      : 1.0
 	14. START TESTIMONIAL DESIGN (START COMPANY BRAND LOGO DESIGN )
 	15. START CONTACT DESIGN
 	16. START FOOTER DESIGN
+	17. SERVICE PAGE DESIGN
   =============================================================*/
 /*
 * ----------------------------------------------------------------------------------------
@@ -1641,3 +1642,19 @@ button, input, textarea:focus {
 * 16.END FOOTER DESIGN
 * ----------------------------------------------------------------------------------------
 */
+
+/*
+* ----------------------------------------------------------------------------------------
+* 17.SERVICE PAGE DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+
+.service-wrapper p{font-size: 14px;line-height: 21px;margin-bottom: 10px;}
+.service-wrapper h2{line-height: 20px;}
+.service-wrapper h2 button {font-size: 16px;}
+.service-wrapper ul{margin-left: 20px;margin-bottom: 10px;list-style-type: disc;}
+.service-wrapper ul ul{list-style-type: circle;}
+.service-wrapper .accordion-button:not(.collapsed), .service-wrapper .accordion-button:not(.collapsed):hover{
+    background-color: var(--thm-black);color: #0d6efd;
+}
+.service-wrapper .accordion-button:hover{background-color: #f1f5f7;}
