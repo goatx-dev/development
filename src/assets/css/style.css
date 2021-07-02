@@ -1658,20 +1658,31 @@ button, input, textarea:focus {
     background-color: var(--thm-black);color: #0d6efd;
 }
 .service-wrapper .accordion-button:hover{background-color: #f1f5f7;}
-
-
+.bg-blue{background-color: var(--thm-black);opacity: .6;}
 .policy-title{padding-top: 110px;margin-top: -80px;margin-bottom: 10px;}
 .policy-wrapper ul{list-style-type: disc;padding-left: 16px;}
 .policy-wrapper p{margin-bottom: 10px;}
 .alert.alert-box{padding: 15px 0;border-radius: 0;border-left: 2px solid;}
 .alert.alert-box span{padding: 0rem .9rem;}
 ul.list-styled{list-style-type: disc;padding-left: 16px;}
+.get_start{word-break: break-word;}
 .get_start img{max-width: 600px;}
 .get_start img.mx-300{max-width: 300px;}
 ul.list-number{list-style-type: auto;padding-left: 16px;}
+.about-block{padding: 40px 0;}
+.about-block h3{text-align: center;}
+
 
 @media only screen and (max-width: 767px) {
 	.get_start img{max-width: 320px;}
 	.get_start img.mx-300{max-width: 200px;}
 	.policy-title{padding-top: 90px;}
+	.about-block{padding: 15px 0;}
 }
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* 17.END SERVICE PAGE DESIGN
+* ----------------------------------------------------------------------------------------
+*/  
