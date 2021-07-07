@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Gallery } from 'ng-gallery';
 
 @Component({
   selector: 'app-nft-gallery',
@@ -8,7 +7,7 @@ import { Gallery } from 'ng-gallery';
 })
 export class NftGalleryComponent implements OnInit {
 
-  constructor(public gallery: Gallery) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

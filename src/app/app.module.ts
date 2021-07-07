@@ -56,7 +56,7 @@ import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 import { InfoPageComponent } from './pages/info-page/info-page.component';
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 import { NftGalleryComponent } from './pages/nft-gallery/nft-gallery.component';
-import { GalleryModule } from 'ng-gallery';
+
 
 @NgModule({
   declarations: [
@@ -116,8 +116,8 @@ import { GalleryModule } from 'ng-gallery';
     NgxTablePaginationModule,
     Ng2SearchPipeModule,
     NgbModule,
-    Ng2GoogleChartsModule,
-    GalleryModule
+    Ng2GoogleChartsModule
+    
   ],
   providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
