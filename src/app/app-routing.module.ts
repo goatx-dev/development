@@ -37,7 +37,8 @@ import { TradePageComponent } from './pages/trade-page/trade-page.component';
 import { TransactionsPageComponent } from './pages/transactions-page/transactions-page.component';
 import { WalletComponent } from './pages/wallet/wallet.component';
 import { WatchlistPageComponent } from './pages/watchlist-page/watchlist-page.component';
-
+import { NftGalleryComponent } from './pages/nft-gallery/nft-gallery.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 const routes: Routes = [
   {
     path: '',
