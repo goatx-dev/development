@@ -55,6 +55,8 @@ import { ResearchPageComponent } from './pages/research-page/research-page.compo
 import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 import { InfoPageComponent } from './pages/info-page/info-page.component';
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { NftGalleryComponent } from './pages/nft-gallery/nft-gallery.component';
+import { GalleryModule } from 'ng-gallery';
 
 @NgModule({
   declarations: [
@@ -102,7 +104,8 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
     ResearchPageComponent,
     DocsPageComponent,
     InfoPageComponent,
-    SettingsPageComponent
+    SettingsPageComponent,
+    NftGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +116,8 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
     NgxTablePaginationModule,
     Ng2SearchPipeModule,
     NgbModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
+    GalleryModule
   ],
   providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

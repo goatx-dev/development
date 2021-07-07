@@ -190,6 +190,18 @@ const routes: Routes = [
   {
     path: 'settings',
     component: SettingsPageComponent
+  },
+  {
+    path: 'about',
+    component: AboutUsComponent
+  },
+  {
+    path: 'getstarted',
+    component: GetStartedComponent
+  },
+  {
+    path: 'nftgallery',
+    component: NftGalleryComponent
   }
 ];
 
